@@ -1,0 +1,2883 @@
+{
+	"info": {
+		"_postman_id": "3b50ebfe-ca84-4017-b271-d805bc25f64f",
+		"name": "EULA",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21331848"
+	},
+	"item": [
+		{
+			"name": "LoginHappypath Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.environment.set(\"tokenAdmin\",pm.response.headers.get(\"x-auth-token\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-device-Id",
+						"value": "123",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"admin@gmail.com\",\r\n    \"password\":\"123456\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "# ***This Login Path is working***"
+			},
+			"response": []
+		},
+		{
+			"name": "LoginHappypath Production",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"\r",
+							"pm.environment.set(\"tokenAdmin\",pm.response.headers.get(\"x-auth-token\"));"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-device-Id",
+						"value": "123",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"aron.ghirmai@gmail.com\",\r\n    \"password\":\"aron@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/auth",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"auth"
+					]
+				},
+				"description": "# ***This Login Path is working***"
+			},
+			"response": []
+		},
+		{
+			"name": "Get EulaAgent",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "lang",
+							"value": "bl"
+						},
+						{
+							"key": "userType",
+							"value": "Public_User"
+						},
+						{
+							"key": "themeMode",
+							"value": "light"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				},
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenAgent}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula",
+								":lang",
+								":userType",
+								":themeMode"
+							],
+							"variable": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "userType",
+									"value": "Agent"
+								},
+								{
+									"key": "themeMode",
+									"value": "dark"
+								}
+							]
+						}
+					},
+					"status": "Bad Gateway",
+					"code": 502,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 20:21:29 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f86fd4cb-ef27-44ba-b4fa-2b9c34c19164"
+						},
+						{
+							"key": "x-amzn-ErrorType",
+							"value": "InternalServerErrorException"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SstmHHtMoAMF_rA="
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 593f8562e0fb21172ab237373f0038ee.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "MRS52-P4"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "PpqSFmvBWbKBGLe5T-NqN2Q17ISYJDOl-Br3BOmgicAr9vQGc50AwQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Internal server error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaPU",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "userType",
+							"value": "Public_User"
+						},
+						{
+							"key": "themeMode",
+							"value": "light"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				},
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenAgent}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula",
+								":lang",
+								":userType",
+								":themeMode"
+							],
+							"variable": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "userType",
+									"value": "Agent"
+								},
+								{
+									"key": "themeMode",
+									"value": "dark"
+								}
+							]
+						}
+					},
+					"status": "Bad Gateway",
+					"code": 502,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 20:21:29 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f86fd4cb-ef27-44ba-b4fa-2b9c34c19164"
+						},
+						{
+							"key": "x-amzn-ErrorType",
+							"value": "InternalServerErrorException"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SstmHHtMoAMF_rA="
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 593f8562e0fb21172ab237373f0038ee.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "MRS52-P4"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "PpqSFmvBWbKBGLe5T-NqN2Q17ISYJDOl-Br3BOmgicAr9vQGc50AwQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Internal server error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaCC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "lang",
+							"value": "bl"
+						},
+						{
+							"key": "userType",
+							"value": "Public_User"
+						},
+						{
+							"key": "themeMode",
+							"value": "light"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				},
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenAgent}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula",
+								":lang",
+								":userType",
+								":themeMode"
+							],
+							"variable": [
+								{
+									"key": "lang",
+									"value": "en"
+								},
+								{
+									"key": "userType",
+									"value": "Agent"
+								},
+								{
+									"key": "themeMode",
+									"value": "dark"
+								}
+							]
+						}
+					},
+					"status": "Bad Gateway",
+					"code": 502,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "36"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 25 May 2022 20:21:29 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "f86fd4cb-ef27-44ba-b4fa-2b9c34c19164"
+						},
+						{
+							"key": "x-amzn-ErrorType",
+							"value": "InternalServerErrorException"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "SstmHHtMoAMF_rA="
+						},
+						{
+							"key": "X-Cache",
+							"value": "Error from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 593f8562e0fb21172ab237373f0038ee.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "MRS52-P4"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "PpqSFmvBWbKBGLe5T-NqN2Q17ISYJDOl-Br3BOmgicAr9vQGc50AwQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Internal server error\"\n}"
+				}
+			]
+		},
+		{
+			"name": "UPloadEULA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eulaupload/:type/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eulaupload",
+						":type",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "userType",
+							"value": "Public_User"
+						},
+						{
+							"key": "themeMode",
+							"value": "dark"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAgent wzNoAdminPrevilage Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenPU}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eulaupload/:type/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eulaupload",
+						":type",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						},
+						{
+							"key": "themeMode",
+							"value": "dark"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAgentwzArabic",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:type/:lang/:userType",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":type",
+						":lang",
+						":userType"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "ar"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAgentwzTigringha",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {\r",
+							"    pm.response.to.have.status(401);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:type/:lang/:userType",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":type",
+						":lang",
+						":userType"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "ti"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAgentwInvalidEULA",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:type/:lang/:userType",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":type",
+						":lang",
+						":userType"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "rr"
+						},
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAgentwzInvalidUserType",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 404\", function () {\r",
+							"    pm.response.to.have.status(404);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:type/:lang/:userType",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":type",
+						":lang",
+						":userType"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "en"
+						},
+						{
+							"key": "userType",
+							"value": "Reviewer"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaPU",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:type/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":type",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "type",
+							"value": "EULA"
+						},
+						{
+							"key": "lang",
+							"value": "ti"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						},
+						{
+							"key": "themeMode",
+							"value": "light"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaCC",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAgent}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula/:lang/:userType/:themeMode",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula",
+						":lang",
+						":userType",
+						":themeMode"
+					],
+					"variable": [
+						{
+							"key": "lang",
+							"value": "ti"
+						},
+						{
+							"key": "userType",
+							"value": "Agent"
+						},
+						{
+							"key": "themeMode",
+							"value": "light"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get EulaAgent",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-auth-token",
+								"value": "{{tokenCC}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/user/eula",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"user",
+								"eula"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "119"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Jul 2021 14:19:33 GMT"
+						},
+						{
+							"key": "x-amzn-RequestId",
+							"value": "ff3cbf92-ccdd-4e8a-befb-513f4714ae3e"
+						},
+						{
+							"key": "x-dns-prefetch-control",
+							"value": "off"
+						},
+						{
+							"key": "x-xss-protection",
+							"value": "1; mode=block"
+						},
+						{
+							"key": "access-control-allow-origin",
+							"value": "*"
+						},
+						{
+							"key": "strict-transport-security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "SAMEORIGIN"
+						},
+						{
+							"key": "access-control-allow-headers",
+							"value": "Origin, X-Requested-With, Content-Type, Accept,x-auth-token"
+						},
+						{
+							"key": "x-amzn-Remapped-content-length",
+							"value": "119"
+						},
+						{
+							"key": "x-download-options",
+							"value": "noopen"
+						},
+						{
+							"key": "access-control-expose-heaaders",
+							"value": "x-auth-token"
+						},
+						{
+							"key": "x-amz-apigw-id",
+							"value": "By1GaHiZIAMF9AQ="
+						},
+						{
+							"key": "vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "x-content-type-options",
+							"value": "nosniff"
+						},
+						{
+							"key": "etag",
+							"value": "W/\"77-RaV6wHx4fIlnq0dea9mGWVhSnJs\""
+						},
+						{
+							"key": "access-control-allow-methods",
+							"value": "PUT,GET,POST,DELETE"
+						},
+						{
+							"key": "X-Amzn-Trace-Id",
+							"value": "Root=1-60ddcef5-0a0de74d6aad427575a8fab5;Sampled=0"
+						},
+						{
+							"key": "X-Cache",
+							"value": "Miss from cloudfront"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 a769201928d4a671d76c2aeb231718ae.cloudfront.net (CloudFront)"
+						},
+						{
+							"key": "X-Amz-Cf-Pop",
+							"value": "CDG52-P1"
+						},
+						{
+							"key": "X-Amz-Cf-Id",
+							"value": "Uka0AE--xY_7S0lxUUJXKvgPByvQJKxI8X0_7vABlEhBcWnwF3g2AQ=="
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Successfully saved\",\n    \"detail\": \"https://kabbee-plus-documents.s3.us-east-1.amazonaws.com/EULA/en/Agent.html\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get EulaAdmin",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenCC}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\",\r\n    \"themeMode\":\"dark\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UploadEula",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\",\r\n    \"themeMode\":\"dark\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eulaupload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eulaupload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get EulaAdmin Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenAdmin}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Agent\",\r\n    \"themeMode\":\"dark\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eulaupload",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eulaupload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get EulaPublicUse",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenCC}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Public_User\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get EulaPublicUse Copy",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-auth-token",
+						"value": "{{tokenCC}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"type\":\"EULA\",\r\n    \"lang\":\"en\",\r\n    \"userType\":\"Content_Creator\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/user/eula",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"user",
+						"eula"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
